@@ -6,7 +6,6 @@ import ejs from "ejs";
 const app = express();
 const port = 3000;
 
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //Step 3 - Make the styling show up.
@@ -23,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   //Step 1 - Make the get route work and render the index.ejs file.
-  res.render("index.ejs");
+  res.render("index");
   
 });
 
@@ -35,7 +34,7 @@ app.post("/submit", (req, res) => {
 
   
 
-  res.render("index.ejs", { 
+  res.render("index", { 
     adj: randomAdj, 
     noun: randomNoun
   });
